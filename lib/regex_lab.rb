@@ -7,7 +7,8 @@ def words_starting_with_un_and_ending_with_ing(text)
 end
 
 def words_five_letters_long(text)
-  text.grep(/^\w{5}\s/)
+  ary = text.split(" ")
+  ary.grep(/^\w{5}\s/)
 end
 
 def first_word_capitalized_and_ends_with_punctuation?(text)
@@ -15,5 +16,5 @@ def first_word_capitalized_and_ends_with_punctuation?(text)
 end
 
 def valid_phone_number?(phone)
-  phone.grep(/[0-9]{10}&&[^a-z]/) ? true : false
+  phone.scan(/[0-9]{10}&&[^a-z]/) ? true : false
 end
